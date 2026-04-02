@@ -80,3 +80,5 @@ if __name__ == "__main__":
     # 측정 결과 히스토그램 그리기
     plot_histogram(counts)
     plt.show()
+
+print("I have a change!")
