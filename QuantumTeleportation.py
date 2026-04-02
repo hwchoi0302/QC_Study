@@ -59,6 +59,7 @@
 # plot_histogram(exp_counts)
 # plt.show()
 
+## Simulator에서 실행시키는 QT
 # Import
 from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister, transpile
 from qiskit.visualization import plot_histogram, plot_bloch_multivector, array_to_latex
