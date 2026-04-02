@@ -1,11 +1,11 @@
-# Import
-from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister, transpile
-from qiskit.visualization import plot_histogram, plot_bloch_multivector, array_to_latex
-from qiskit.extensions import Initialize
-from qiskit.result import marginal_counts
-from qiskit.quantum_info import random_statevector
-import matplotlib.pyplot as plt
-import numpy as np
+# # Import
+# from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister, transpile
+# from qiskit.visualization import plot_histogram, plot_bloch_multivector, array_to_latex
+# from qiskit.circuit.library import Initialize
+# from qiskit.result import marginal_counts
+# from qiskit.quantum_info import random_statevector
+# import matplotlib.pyplot as plt
+# import numpy as np
 
 # # Create random 1-qubit state
 # psi = random_statevector(2)
@@ -62,7 +62,7 @@ import numpy as np
 # Import
 from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister, transpile
 from qiskit.visualization import plot_histogram, plot_bloch_multivector, array_to_latex
-from qiskit.extensions import Initialize
+from qiskit.circuit.library import Initialize
 from qiskit.result import marginal_counts
 from qiskit.quantum_info import random_statevector
 import matplotlib.pyplot as plt
@@ -74,9 +74,8 @@ import numpy as np
 # init_gate.label = "init"
 # inverse_init_gate = init_gate.gates_to_uncompute()
 
+
 # SETUP
-
-
 def create_bell_pair(qc, a, b):
     qc.h(a)
     qc.cx(a, b)
@@ -128,11 +127,12 @@ qc.draw("mpl")
 from qiskit_aer import AerSimulator
 
 aer_sim = AerSimulator()
-shots = 1024  # 일관성을 위해 shots 정의
-job = aer_sim.run(qc, shots=shots)
+shots = 1024
+t_qc = transpile(qc, aer_sim)
+job = aer_sim.run(t_qc, shots=shots)
 exp_result = job.result()
 
-exp_counts = exp_result.get_counts(qc)
+exp_counts = exp_result.get_counts(t_qc)
 print(exp_counts)
 plot_histogram(exp_counts)
 plt.show()
