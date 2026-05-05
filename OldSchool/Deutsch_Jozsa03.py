@@ -1,11 +1,10 @@
 # Deutsch_Jozsa Algorithm in Real Computer
 
-from Deutsch_Jozsa02 import dj_oracle, dj_algorithm
+from OldSchool.Deutsch_Jozsa02 import dj_oracle, dj_algorithm
 import matplotlib.pyplot as plt
 from qiskit.visualization import plot_histogram
 from qiskit_aer import AerSimulator
 from qiskit import transpile  # transpile for AerSimulator
-
 
 n = 6
 oracle_gate = dj_oracle("constant", n)
