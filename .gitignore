@@ -1,5 +1,58 @@
-.env
+# 가상환경 (Venv)
 .venv/
+venv/
+ENV/
+
+# Python 패키지 캐시
 __pycache__/
-.csv
-.png
+*.py[cod]
+*$py.class
+
+# IDE / 에디터 설정
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 환경 변수 (비밀번호 등 민감정보)
+.env
+.env.production
+.env.development
+
+# 데이터 파일 (크기가 크거나 민감할 수 있음)
+# .csv
+# .json
+# .log
+# .db
+
+# 빌드 결과물
+dist/
+build/
+tmp/
+temp/
+
+# OS 관련
+.DS_Store
+Thumbs.db
+
+# 기타
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.Python
+build/
+develop-eggs/
+dist/
+development/
+develop/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+.Python
+Scripts/
+web-build/
+
+*.log
